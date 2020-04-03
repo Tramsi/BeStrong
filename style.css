@@ -171,6 +171,7 @@ header .motivation {
           justify-content: center;
   width: 100%;
   color: rgba(255, 255, 255, 0.9);
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 header .motivation h1:nth-of-type(1) {
@@ -190,26 +191,30 @@ header a {
   -webkit-transform: translateX(50%);
           transform: translateX(50%);
   padding: 12px 35px;
-  background-color: rgba(240, 245, 249, 0.5);
-  color: #1e2022;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 3px solid #f0f5f9;
+  color: white;
   font-size: 1.5rem;
   text-decoration: none;
   z-index: 10;
-  border: 1px solid #1e2022;
   font-weight: 900;
   -webkit-transition: all 300ms;
   transition: all 300ms;
+  border-radius: 50px;
 }
 
 header a:hover {
-  background-color: #1e2022;
+  background-color: rgba(0, 0, 0, 0.6);
   color: #f0f5f9;
-  top: 74%;
+  -webkit-transform: translateX(50%) scale(1.05);
+          transform: translateX(50%) scale(1.05);
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
 section.about {
-  height: 50vh;
-  min-height: 50vh;
+  height: 47vh;
+  min-height: 47vh;
   text-align: center;
   padding: 50px 20%;
   overflow: hidden;
@@ -222,12 +227,59 @@ section.about h2 {
 }
 
 section.coaching {
-  height: 50vh;
+  height: 47vh;
   width: 80%;
   margin: 0 auto;
+  margin-top: 6vh;
 }
 
 section.coaching img {
+  float: left;
+  height: 100%;
+  width: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: right;
+     object-position: right;
+  -webkit-clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);
+          clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);
+}
+
+section.coaching .coach-text {
+  float: left;
+  width: 50%;
+  height: 100%;
+  -webkit-clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);
+          clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);
+  overflow: hidden;
+}
+
+section.coaching .coach-text .shape {
+  float: left;
+  width: 15%;
+  height: 100%;
+  shape-outside: polygon(0 0, 100% 100%, 0% 100%);
+}
+
+section.coaching .coach-text .shape2 {
+  float: right;
+  width: 15%;
+  height: 100%;
+  shape-outside: polygon(0 0, 100% 0%, 100% 100%);
+}
+
+section.coaching .coach-text h2 {
+  margin: 20px;
+}
+
+section.equipment {
+  height: 47vh;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 6vh;
+}
+
+section.equipment img {
   float: left;
   height: 100%;
   width: 50%;
@@ -239,7 +291,7 @@ section.coaching img {
           clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
 }
 
-section.coaching .coach-text {
+section.equipment .coach-text {
   float: left;
   width: 50%;
   height: 100%;
@@ -248,21 +300,67 @@ section.coaching .coach-text {
   overflow: hidden;
 }
 
-section.coaching .coach-text .shape {
+section.equipment .coach-text .shape {
   float: left;
   width: 15%;
   height: 100%;
   shape-outside: polygon(0 0, 0% 100%, 100% 0);
 }
 
-section.coaching .coach-text .shape2 {
+section.equipment .coach-text .shape2 {
   float: right;
   width: 15%;
   height: 100%;
   shape-outside: polygon(0 100%, 100% 100%, 100% 0);
 }
 
-section.coaching .coach-text h2 {
+section.equipment .coach-text h2 {
+  margin: 20px;
+}
+
+section.place {
+  height: 47vh;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 6vh;
+}
+
+section.place img {
+  float: left;
+  height: 100%;
+  width: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: right;
+     object-position: right;
+  -webkit-clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);
+          clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);
+}
+
+section.place .coach-text {
+  float: left;
+  width: 50%;
+  height: 100%;
+  -webkit-clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);
+          clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);
+  overflow: hidden;
+}
+
+section.place .coach-text .shape {
+  float: left;
+  width: 15%;
+  height: 100%;
+  shape-outside: polygon(0 0, 100% 100%, 0% 100%);
+}
+
+section.place .coach-text .shape2 {
+  float: right;
+  width: 15%;
+  height: 100%;
+  shape-outside: polygon(0 0, 100% 0%, 100% 100%);
+}
+
+section.place .coach-text h2 {
   margin: 20px;
 }
 /*# sourceMappingURL=style.css.map */

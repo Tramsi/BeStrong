@@ -144,6 +144,7 @@ header {
     justify-content: center;
     width: 100%;
     color: rgba(255, 255, 255, 0.9);
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     h1:nth-of-type(1) {
       margin-right: auto;
       margin-left: 25%;
@@ -160,25 +161,27 @@ header {
     right: 50%;
     transform: translateX(50%);
     padding: 12px 35px;
-    background-color: rgba(240, 245, 249, 0.5);
-    color: $dark;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 3px solid $light;
+    color: white;
     font-size: 1.5rem;
     text-decoration: none;
     z-index: 10;
-    border: 1px solid $dark;
     font-weight: 900;
     transition: all 300ms;
+    border-radius: 50px;
     &:hover {
-      background-color: $dark;
+      background-color: rgba(0, 0, 0, 0.6);
       color: $light;
-      top: 74%;
+      transform: translateX(50%) scale(1.05);
+      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
     }
   }
 }
 
 section.about {
-  height: 50vh;
-  min-height: 50vh;
+  height: 47vh;
+  min-height: 47vh;
   text-align: center;
   padding: 50px 20%;
   overflow: hidden;
@@ -190,9 +193,52 @@ section.about {
 }
 
 section.coaching {
-  height: 50vh;
+  height: 47vh;
   width: 80%;
   margin: 0 auto;
+  margin-top: 6vh;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
+
+  img {
+    float: left;
+    height: 100%;
+    width: 50%;
+    object-fit: cover;
+    object-position: right;
+    clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);
+  }
+
+  .coach-text {
+    float: left;
+    width: 50%;
+    height: 100%;
+    clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);
+    overflow: hidden;
+    .shape {
+      float: left;
+      width: 15%;
+      height: 100%;
+      shape-outside: polygon(0 0, 100% 100%, 0% 100%);
+    }
+
+    .shape2 {
+      float: right;
+      width: 15%;
+      height: 100%;
+      shape-outside: polygon(0 0, 100% 0%, 100% 100%);
+    }
+    h2 {
+      margin: 20px;
+    }
+  }
+}
+
+section.equipment {
+  height: 47vh;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 6vh;
   // display: grid;
   // grid-template-columns: 1fr 1fr;
 
@@ -223,6 +269,48 @@ section.coaching {
       width: 15%;
       height: 100%;
       shape-outside: polygon(0 100%, 100% 100%, 100% 0);
+    }
+    h2 {
+      margin: 20px;
+    }
+  }
+}
+
+section.place {
+  height: 47vh;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 6vh;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
+
+  img {
+    float: left;
+    height: 100%;
+    width: 50%;
+    object-fit: cover;
+    object-position: right;
+    clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);
+  }
+
+  .coach-text {
+    float: left;
+    width: 50%;
+    height: 100%;
+    clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);
+    overflow: hidden;
+    .shape {
+      float: left;
+      width: 15%;
+      height: 100%;
+      shape-outside: polygon(0 0, 100% 100%, 0% 100%);
+    }
+
+    .shape2 {
+      float: right;
+      width: 15%;
+      height: 100%;
+      shape-outside: polygon(0 0, 100% 0%, 100% 100%);
     }
     h2 {
       margin: 20px;
