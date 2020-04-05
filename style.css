@@ -32,7 +32,7 @@ h2 {
 }
 
 p {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 nav {
@@ -201,6 +201,7 @@ header a {
   -webkit-transition: all 300ms;
   transition: all 300ms;
   border-radius: 50px;
+  text-align: center;
 }
 
 header a:hover {
@@ -213,11 +214,23 @@ header a:hover {
 }
 
 section.about {
-  height: 47vh;
+  max-height: 100vh;
   min-height: 47vh;
   text-align: center;
   padding: 50px 20%;
-  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 section.about h2 {
@@ -226,141 +239,161 @@ section.about h2 {
   margin-bottom: 10px;
 }
 
-section.coaching {
-  height: 47vh;
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 80%;
-  margin: 0 auto;
-  margin-top: 6vh;
+  margin: 6vh auto;
 }
 
 section.coaching img {
-  float: left;
-  height: 100%;
   width: 50%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: right;
      object-position: right;
-  -webkit-clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);
-          clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);
 }
 
 section.coaching .coach-text {
-  float: left;
   width: 50%;
-  height: 100%;
-  -webkit-clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);
-          clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);
+  text-align: justify;
+  text-justify: auto;
   overflow: hidden;
+}
+
+section.coaching .coach-text::after {
+  display: block;
+  content: "";
+  clear: both;
 }
 
 section.coaching .coach-text .shape {
   float: left;
   width: 15%;
   height: 100%;
-  shape-outside: polygon(0 0, 100% 100%, 0% 100%);
 }
 
 section.coaching .coach-text .shape2 {
   float: right;
   width: 15%;
   height: 100%;
-  shape-outside: polygon(0 0, 100% 0%, 100% 100%);
 }
 
 section.coaching .coach-text h2 {
-  margin: 20px;
+  margin-bottom: 20px;
 }
 
-section.equipment {
-  height: 47vh;
-  width: 80%;
-  margin: 0 auto;
-  margin-top: 6vh;
+section.coaching img {
+  -webkit-clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);
+          clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);
+}
+
+section.coaching .coach-text .shape {
+  shape-outside: polygon(0 0, 100% 100%, 0% 100%);
+}
+
+section.coaching .coach-text .shape2 {
+  shape-outside: polygon(0 0, 100% 0%, 100% 100%);
 }
 
 section.equipment img {
-  float: left;
-  height: 100%;
   width: 50%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: right;
      object-position: right;
-  -webkit-clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
-          clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
 }
 
 section.equipment .coach-text {
-  float: left;
   width: 50%;
-  height: 100%;
-  -webkit-clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
-          clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+  text-align: justify;
+  text-justify: auto;
   overflow: hidden;
+}
+
+section.equipment .coach-text::after {
+  display: block;
+  content: "";
+  clear: both;
 }
 
 section.equipment .coach-text .shape {
   float: left;
   width: 15%;
   height: 100%;
-  shape-outside: polygon(0 0, 0% 100%, 100% 0);
 }
 
 section.equipment .coach-text .shape2 {
   float: right;
   width: 15%;
   height: 100%;
-  shape-outside: polygon(0 100%, 100% 100%, 100% 0);
 }
 
 section.equipment .coach-text h2 {
-  margin: 20px;
+  margin-bottom: 20px;
 }
 
-section.place {
-  height: 47vh;
-  width: 80%;
-  margin: 0 auto;
-  margin-top: 6vh;
+section.equipment img {
+  -webkit-clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+          clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+}
+
+section.equipment .coach-text .shape {
+  shape-outside: polygon(0 0, 0% 100%, 100% 0);
+}
+
+section.equipment .coach-text .shape2 {
+  shape-outside: polygon(100% 0, 100% 100%, 0% 100%);
 }
 
 section.place img {
-  float: left;
-  height: 100%;
   width: 50%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: right;
      object-position: right;
-  -webkit-clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);
-          clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);
 }
 
 section.place .coach-text {
-  float: left;
   width: 50%;
-  height: 100%;
-  -webkit-clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);
-          clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);
+  text-align: justify;
+  text-justify: auto;
   overflow: hidden;
+}
+
+section.place .coach-text::after {
+  display: block;
+  content: "";
+  clear: both;
 }
 
 section.place .coach-text .shape {
   float: left;
   width: 15%;
   height: 100%;
-  shape-outside: polygon(0 0, 100% 100%, 0% 100%);
 }
 
 section.place .coach-text .shape2 {
   float: right;
   width: 15%;
   height: 100%;
-  shape-outside: polygon(0 0, 100% 0%, 100% 100%);
 }
 
 section.place .coach-text h2 {
-  margin: 20px;
+  margin-bottom: 20px;
+}
+
+section.place img {
+  -webkit-clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);
+          clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);
+}
+
+section.place .coach-text .shape {
+  shape-outside: polygon(0 0, 100% 100%, 0% 100%);
+}
+
+section.place .coach-text .shape2 {
+  shape-outside: polygon(0 0, 100% 0%, 100% 100%);
 }
 /*# sourceMappingURL=style.css.map */
