@@ -134,6 +134,8 @@ nav ul .brand:hover a {
 
 nav ul .brand:hover .logo {
   fill: #c9d6df;
+  -webkit-transform: translateY(-8px);
+          transform: translateY(-8px);
 }
 
 header {
@@ -207,8 +209,8 @@ header a {
 header a:hover {
   background-color: rgba(0, 0, 0, 0.6);
   color: #f0f5f9;
-  -webkit-transform: translateX(50%) scale(1.05);
-          transform: translateX(50%) scale(1.05);
+  -webkit-transform: translateX(50%) scale(1.02);
+          transform: translateX(50%) scale(1.02);
   -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
           box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
@@ -233,6 +235,12 @@ section.about {
           flex-direction: column;
 }
 
+@media screen and (max-width: 768px) {
+  section.about {
+    padding: 50px 10%;
+  }
+}
+
 section.about h2 {
   padding: 15px;
   text-transform: uppercase;
@@ -243,8 +251,21 @@ section.about h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 47vh;
   width: 80%;
+  min-width: 750px;
   margin: 6vh auto;
+}
+
+@media screen and (max-width: 768px) {
+  .row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto;
+    min-width: auto;
+  }
 }
 
 section.coaching img {
@@ -253,6 +274,21 @@ section.coaching img {
      object-fit: cover;
   -o-object-position: right;
      object-position: right;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+@media screen and (max-width: 768px) {
+  section.coaching img {
+    width: 100%;
+    height: 47vh;
+    margin: 6vh 0;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    -webkit-clip-path: none !important;
+            clip-path: none !important;
+  }
 }
 
 section.coaching .coach-text {
@@ -266,6 +302,16 @@ section.coaching .coach-text::after {
   display: block;
   content: "";
   clear: both;
+}
+
+@media screen and (max-width: 768px) {
+  section.coaching .coach-text {
+    width: 100%;
+    overflow: auto;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
 }
 
 section.coaching .coach-text .shape {
@@ -282,6 +328,10 @@ section.coaching .coach-text .shape2 {
 
 section.coaching .coach-text h2 {
   margin-bottom: 20px;
+}
+
+section.coaching .coach-text h2 span {
+  text-transform: uppercase;
 }
 
 section.coaching img {
@@ -303,6 +353,21 @@ section.equipment img {
      object-fit: cover;
   -o-object-position: right;
      object-position: right;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+@media screen and (max-width: 768px) {
+  section.equipment img {
+    width: 100%;
+    height: 47vh;
+    margin: 6vh 0;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    -webkit-clip-path: none !important;
+            clip-path: none !important;
+  }
 }
 
 section.equipment .coach-text {
@@ -316,6 +381,16 @@ section.equipment .coach-text::after {
   display: block;
   content: "";
   clear: both;
+}
+
+@media screen and (max-width: 768px) {
+  section.equipment .coach-text {
+    width: 100%;
+    overflow: auto;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
 }
 
 section.equipment .coach-text .shape {
@@ -332,6 +407,10 @@ section.equipment .coach-text .shape2 {
 
 section.equipment .coach-text h2 {
   margin-bottom: 20px;
+}
+
+section.equipment .coach-text h2 span {
+  text-transform: uppercase;
 }
 
 section.equipment img {
@@ -353,6 +432,21 @@ section.place img {
      object-fit: cover;
   -o-object-position: right;
      object-position: right;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+@media screen and (max-width: 768px) {
+  section.place img {
+    width: 100%;
+    height: 47vh;
+    margin: 6vh 0;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    -webkit-clip-path: none !important;
+            clip-path: none !important;
+  }
 }
 
 section.place .coach-text {
@@ -366,6 +460,16 @@ section.place .coach-text::after {
   display: block;
   content: "";
   clear: both;
+}
+
+@media screen and (max-width: 768px) {
+  section.place .coach-text {
+    width: 100%;
+    overflow: auto;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
 }
 
 section.place .coach-text .shape {
@@ -384,6 +488,10 @@ section.place .coach-text h2 {
   margin-bottom: 20px;
 }
 
+section.place .coach-text h2 span {
+  text-transform: uppercase;
+}
+
 section.place img {
   -webkit-clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);
           clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);
@@ -395,5 +503,84 @@ section.place .coach-text .shape {
 
 section.place .coach-text .shape2 {
   shape-outside: polygon(0 0, 100% 0%, 100% 100%);
+}
+
+section.sauna img {
+  width: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: right;
+     object-position: right;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+@media screen and (max-width: 768px) {
+  section.sauna img {
+    width: 100%;
+    height: 47vh;
+    margin: 6vh 0;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    -webkit-clip-path: none !important;
+            clip-path: none !important;
+  }
+}
+
+section.sauna .coach-text {
+  width: 50%;
+  text-align: justify;
+  text-justify: auto;
+  overflow: hidden;
+}
+
+section.sauna .coach-text::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+@media screen and (max-width: 768px) {
+  section.sauna .coach-text {
+    width: 100%;
+    overflow: auto;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+}
+
+section.sauna .coach-text .shape {
+  float: left;
+  width: 15%;
+  height: 100%;
+}
+
+section.sauna .coach-text .shape2 {
+  float: right;
+  width: 15%;
+  height: 100%;
+}
+
+section.sauna .coach-text h2 {
+  margin-bottom: 20px;
+}
+
+section.sauna .coach-text h2 span {
+  text-transform: uppercase;
+}
+
+section.sauna img {
+  -webkit-clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+          clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+}
+
+section.sauna .coach-text .shape {
+  shape-outside: polygon(0 0, 0% 100%, 100% 0);
+}
+
+section.sauna .coach-text .shape2 {
+  shape-outside: polygon(100% 0, 100% 100%, 0% 100%);
 }
 /*# sourceMappingURL=style.css.map */
