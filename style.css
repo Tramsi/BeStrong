@@ -140,6 +140,7 @@ nav ul .brand:hover .logo {
 
 header {
   height: 100vh;
+  min-height: 500px;
   position: relative;
 }
 
@@ -148,6 +149,8 @@ header img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
 header::after {
@@ -216,8 +219,8 @@ header a:hover {
 }
 
 section.about {
-  max-height: 100vh;
-  min-height: 47vh;
+  height: 47vh;
+  min-height: 300px;
   text-align: center;
   padding: 50px 20%;
   display: -webkit-box;
@@ -252,6 +255,7 @@ section.about h2 {
   display: -ms-flexbox;
   display: flex;
   height: 47vh;
+  min-height: 350px;
   width: 80%;
   min-width: 750px;
   margin: 6vh auto;
@@ -270,32 +274,19 @@ section.about h2 {
 
 section.coaching img {
   width: 50%;
+  min-height: 350px;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: right;
      object-position: right;
-  -webkit-transition: all 1s;
-  transition: all 1s;
-}
-
-@media screen and (max-width: 768px) {
-  section.coaching img {
-    width: 100%;
-    height: 47vh;
-    margin: 6vh 0;
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
-    -webkit-clip-path: none !important;
-            clip-path: none !important;
-  }
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
 }
 
 section.coaching .coach-text {
   width: 50%;
   text-align: justify;
   text-justify: auto;
-  overflow: hidden;
 }
 
 section.coaching .coach-text::after {
@@ -347,34 +338,34 @@ section.coaching .coach-text .shape2 {
   shape-outside: polygon(0 0, 100% 0%, 100% 100%);
 }
 
-section.equipment img {
-  width: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: right;
-     object-position: right;
-  -webkit-transition: all 1s;
-  transition: all 1s;
-}
-
 @media screen and (max-width: 768px) {
-  section.equipment img {
+  section.coaching img {
     width: 100%;
     height: 47vh;
     margin: 6vh 0;
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
-    -webkit-clip-path: none !important;
-            clip-path: none !important;
+    -webkit-clip-path: none;
+            clip-path: none;
   }
+}
+
+section.equipment img {
+  width: 50%;
+  min-height: 350px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: right;
+     object-position: right;
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
 }
 
 section.equipment .coach-text {
   width: 50%;
   text-align: justify;
   text-justify: auto;
-  overflow: hidden;
 }
 
 section.equipment .coach-text::after {
@@ -426,34 +417,34 @@ section.equipment .coach-text .shape2 {
   shape-outside: polygon(100% 0, 100% 100%, 0% 100%);
 }
 
-section.place img {
-  width: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: right;
-     object-position: right;
-  -webkit-transition: all 1s;
-  transition: all 1s;
-}
-
 @media screen and (max-width: 768px) {
-  section.place img {
+  section.equipment img {
     width: 100%;
     height: 47vh;
     margin: 6vh 0;
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
-    -webkit-clip-path: none !important;
-            clip-path: none !important;
+    -webkit-clip-path: none;
+            clip-path: none;
   }
+}
+
+section.place img {
+  width: 50%;
+  min-height: 350px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: right;
+     object-position: right;
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
 }
 
 section.place .coach-text {
   width: 50%;
   text-align: justify;
   text-justify: auto;
-  overflow: hidden;
 }
 
 section.place .coach-text::after {
@@ -505,34 +496,34 @@ section.place .coach-text .shape2 {
   shape-outside: polygon(0 0, 100% 0%, 100% 100%);
 }
 
-section.sauna img {
-  width: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: right;
-     object-position: right;
-  -webkit-transition: all 1s;
-  transition: all 1s;
-}
-
 @media screen and (max-width: 768px) {
-  section.sauna img {
+  section.place img {
     width: 100%;
     height: 47vh;
     margin: 6vh 0;
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
-    -webkit-clip-path: none !important;
-            clip-path: none !important;
+    -webkit-clip-path: none;
+            clip-path: none;
   }
+}
+
+section.sauna img {
+  width: 50%;
+  min-height: 350px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: right;
+     object-position: right;
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
 }
 
 section.sauna .coach-text {
   width: 50%;
   text-align: justify;
   text-justify: auto;
-  overflow: hidden;
 }
 
 section.sauna .coach-text::after {
@@ -582,5 +573,128 @@ section.sauna .coach-text .shape {
 
 section.sauna .coach-text .shape2 {
   shape-outside: polygon(100% 0, 100% 100%, 0% 100%);
+}
+
+@media screen and (max-width: 768px) {
+  section.sauna img {
+    width: 100%;
+    height: 47vh;
+    margin: 6vh 0;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    -webkit-clip-path: none;
+            clip-path: none;
+  }
+}
+
+.subscriptions {
+  width: 80%;
+  margin: 0 auto;
+  min-height: 100vh;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.subscriptions h2 {
+  padding: 30px;
+  text-transform: uppercase;
+}
+
+.subscriptions .cards {
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.subscriptions .cards .system {
+  width: 23%;
+  height: 85%;
+  min-height: 550px;
+  background-color: red;
+}
+
+@media screen and (max-width: 768px) {
+  .subscriptions {
+    min-height: auto;
+  }
+  .subscriptions .cards {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+  .subscriptions .cards .system {
+    width: 100%;
+    min-height: 300px;
+    margin: 20px auto;
+  }
+}
+
+.contact {
+  height: 70vh;
+}
+
+.contact h2 {
+  text-align: center;
+  padding: 30px;
+  text-transform: uppercase;
+}
+
+.contact .flexy {
+  width: 80%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contact .flexy form {
+  width: 60%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact .flexy form label {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.contact .flexy aside {
+  width: 40%;
+}
+
+.contact .flexy aside img {
+  width: 80%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+footer {
+  height: 30vh;
 }
 /*# sourceMappingURL=style.css.map */
