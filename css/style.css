@@ -38,6 +38,7 @@ p {
 nav {
   width: 100%;
   position: absolute;
+  overflow: hidden;
   top: 0;
   z-index: 1000;
 }
@@ -142,6 +143,7 @@ header {
   height: 100vh;
   min-height: 500px;
   position: relative;
+  width: 100%;
 }
 
 header img {
@@ -149,8 +151,6 @@ header img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
 }
 
 header::after {
@@ -205,7 +205,6 @@ header a {
   font-weight: 900;
   -webkit-transition: all 300ms;
   transition: all 300ms;
-  border-radius: 50px;
   text-align: center;
 }
 
@@ -591,7 +590,8 @@ section.sauna .coach-text .shape2 {
 .subscriptions {
   width: 80%;
   margin: 0 auto;
-  min-height: 100vh;
+  height: 100vh;
+  min-height: 700px;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -600,6 +600,9 @@ section.sauna .coach-text .shape2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-bottom: 6vh;
 }
 
 .subscriptions h2 {
@@ -623,11 +626,12 @@ section.sauna .coach-text .shape2 {
   width: 23%;
   height: 85%;
   min-height: 550px;
-  background-color: red;
+  background-color: #52616b;
 }
 
 @media screen and (max-width: 768px) {
   .subscriptions {
+    height: auto;
     min-height: auto;
   }
   .subscriptions .cards {
@@ -647,26 +651,63 @@ section.sauna .coach-text .shape2 {
 }
 
 .contact {
-  height: 70vh;
+  height: 80vh;
+  min-height: 550px;
+  border-bottom: 1px solid #52616b;
+  background-color: rgba(0, 0, 0, 0.692);
+  position: relative;
+}
+
+.contact::after {
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  background: url(/Imgs/8.jpg);
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  background-size: cover;
+  opacity: 0.7;
+  z-index: -1;
 }
 
 .contact h2 {
   text-align: center;
-  padding: 30px;
+  padding: 35px;
   text-transform: uppercase;
+  color: #f0f5f9;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 .contact .flexy {
-  width: 80%;
-  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  min-height: 60vh;
 }
 
-.contact .flexy form {
-  width: 60%;
+.contact .flexy .container {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  width: 35%;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .contact .flexy .container {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact .flexy .container {
+    width: 70%;
+  }
+}
+
+.contact .flexy .container form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -674,27 +715,143 @@ section.sauna .coach-text .shape2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
-.contact .flexy form label {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+.contact .flexy .container form label {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #f0f5f9;
+  font-size: 1.2rem;
 }
 
-.contact .flexy aside {
-  width: 40%;
+.contact .flexy .container form input {
+  width: 100%;
+  padding: 10px 10px;
+  outline-style: none;
+  background-color: #f0f5f9;
+  border: none;
+  font-size: 1.1rem;
 }
 
-.contact .flexy aside img {
-  width: 80%;
-  -o-object-fit: cover;
-     object-fit: cover;
+.contact .flexy .container form textarea {
+  width: 100%;
+  padding: 10px 10px;
+  outline-style: none;
+  min-height: 200px;
+  background-color: #f0f5f9;
+  font-size: 1.2rem;
+}
+
+.contact .flexy .container form button {
+  padding: 7px 40px;
+  font-size: 1.5rem;
+  margin: 40px 0;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 2px solid #f0f5f9;
+  color: white;
+  font-weight: 900;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+  text-align: center;
+  cursor: pointer;
+}
+
+.contact .flexy .container form button:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #f0f5f9;
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  -webkit-transform: scale(1.01) translateY(-3px);
+          transform: scale(1.01) translateY(-3px);
 }
 
 footer {
-  height: 30vh;
+  height: 20vh;
+  min-height: 150px;
+  background-color: #1e2022;
+  color: #52616b;
+  padding: 10px 15%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+    height: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  footer .half1 {
+    width: 100%;
+  }
+  footer .half2 {
+    width: 100%;
+  }
+}
+
+footer p {
+  font-size: 1rem;
+}
+
+footer .half1 {
+  width: 50%;
+}
+
+footer .half1 .newsletter {
+  display: block;
+  color: #52616b;
+  margin-top: 8px;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+}
+
+footer .half1 .newsletter:hover {
+  color: #f0f5f9;
+}
+
+footer .half2 {
+  width: 50%;
+}
+
+footer .half2 a {
+  color: #52616b;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+}
+
+footer .half2 a i {
+  margin: 0 4px;
+}
+
+footer .half2 a:hover {
+  color: #f0f5f9;
+}
+
+footer .half2 .follow {
+  color: #f0f5f9;
+  font-size: 1.1rem;
+  margin: 3px auto;
+}
+
+footer .copyrights {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 /*# sourceMappingURL=style.css.map */
