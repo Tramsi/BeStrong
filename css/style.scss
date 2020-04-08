@@ -38,6 +38,9 @@ body {
   nav.hide {
     transform: translateY(-100%);
   }
+  nav.nav-bg {
+    background-color: rgba(30, 32, 34, 0.98);
+  }
 }
 
 h1 {
@@ -57,18 +60,21 @@ nav {
   position: fixed;
   top: 0;
   z-index: 1000;
-  transition: transform 0.3s;
+  transition: transform 0.3s, background-color 0.7s;
+  display: flex;
+  align-items: center;
   .container {
     @include container(80%);
     position: relative;
     display: flex;
     align-items: center;
+
     ul {
       list-style: none;
       display: flex;
+      align-items: center;
       justify-content: space-between;
       width: 100%;
-
       li {
         text-transform: uppercase;
         display: flex;
@@ -194,19 +200,29 @@ nav {
     }
   }
   @include mq-max(768px) {
+    background-color: rgba(30, 32, 34, 0.98);
     .container {
       width: 100%;
       ul {
         flex-direction: column;
         align-items: center;
         width: 100%;
-        li {
+        li:not(.brand) {
           display: none;
           width: 100%;
+          &::before,
+          ::after {
+            content: none;
+          }
+          a {
+            transition: all 0.5s;
+            &:hover {
+              background-color: rgba($hover, 0.3);
+            }
+          }
         }
-        li.brand {
-          display: flex;
-          width: auto;
+        .chosen {
+          background-color: $hover;
         }
       }
       .ham-icon {
@@ -423,40 +439,117 @@ section.sauna {
 .subscriptions {
   @include container(80%);
   height: 100vh;
-  min-height: 700px;
+  min-width: 750px;
+  min-height: 750px;
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  margin-bottom: 6vh;
+  justify-content: flex-start;
 
   h2 {
     padding: 30px;
     text-transform: uppercase;
   }
   .cards {
-    height: 80%;
     display: flex;
     justify-content: space-around;
     align-items: center;
 
     .system {
-      width: 23%;
-      height: 85%;
-      min-height: 550px;
-      background-color: $hover;
+      margin-top: 100px;
+      height: 500px;
+      width: 290px;
+      background: darken($color: $light, $amount: 4%);
+      box-shadow: 0px 8px 8px rgba($color: $dark, $alpha: 0.3);
+      transition: all 0.3s ease-out;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+
+      a {
+        text-decoration: none;
+        color: $light;
+        background-color: lighten($color: $dark, $amount: 3%);
+        padding: 20px;
+        font-size: 1.3rem;
+      }
+      .price {
+        display: flex;
+        flex-direction: column;
+        font-size: 2em;
+        color: lighten($color: $dark, $amount: 3%);
+        p {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          order: 1;
+          width: 150px;
+          height: 150px;
+          font-size: 2.5rem;
+          align-self: center;
+          padding: 30px;
+          background-color: lighten($color: $dark, $amount: 3%);
+          color: $light;
+          border-radius: 100%;
+          margin-top: -75px;
+          transition: transform 1s;
+          span {
+            font-size: 2rem;
+          }
+        }
+        h3 {
+          order: 2;
+          font-size: 2rem;
+          margin-top: 25px;
+        }
+        ul {
+          order: 3;
+          font-size: 1.3rem;
+          list-style-position: inside;
+          text-align: left;
+          margin-top: 40px;
+          margin-left: 30px;
+          li {
+            margin: 10px auto;
+          }
+        }
+      }
+      &:hover {
+        box-shadow: 0px 20px 20px rgba($color: $dark, $alpha: 0.5);
+        transform: translateY(-10px);
+
+        .price {
+          p {
+            transform: rotateX(360deg);
+          }
+        }
+      }
+    }
+  }
+  @include mq-max(1200px) {
+    .cards {
+      .system {
+        width: 30%;
+        .price {
+          ul {
+            font-size: 1.2rem;
+          }
+        }
+      }
     }
   }
   @include mq-max(768px) {
     height: auto;
     min-height: auto;
+    min-width: auto;
     .cards {
       flex-direction: column;
       justify-content: start;
       .system {
-        width: 100%;
-        min-height: 300px;
-        margin: 20px auto;
+        width: 70%;
+        margin-top: 100px;
+        margin-bottom: 25px;
       }
     }
   }

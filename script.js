@@ -15,6 +15,7 @@ function hamToggle() {
   });
 }
 
+// navbar hides if scrolled down and shows if scrolled up. also changes its color after a certain point
 function navbarScroll() {
   const navbar = document.querySelector("nav");
   console.log(navbar);
@@ -22,14 +23,22 @@ function navbarScroll() {
   console.log(scrollPosBefore);
   window.addEventListener("scroll", function () {
     scrollPosNow = window.pageYOffset;
-    if (scrollPosNow > scrollPosBefore) {
+    if (scrollPosNow > scrollPosBefore && scrollPosNow > 350) {
       navbar.classList.add("hide");
     } else {
       navbar.classList.remove("hide");
     }
+    if (scrollPosNow > 350) {
+      navbar.classList.add("nav-bg");
+    } else {
+      navbar.classList.remove("nav-bg");
+    }
     scrollPosBefore = scrollPosNow;
   });
 }
+
+//change the nav links style depending on
+function chosenPart() {}
 
 hamToggle();
 navbarScroll();
