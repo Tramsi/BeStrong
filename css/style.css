@@ -23,6 +23,11 @@ body {
   background-color: #f0f5f9;
 }
 
+body nav.hide {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
 h1 {
   font-size: 3rem;
 }
@@ -37,31 +42,46 @@ p {
 
 nav {
   width: 100%;
-  position: absolute;
-  overflow: hidden;
+  position: fixed;
   top: 0;
   z-index: 1000;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
-nav ul {
-  list-style: none;
+nav .container {
   width: 80%;
   margin: 0 auto;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav .container ul {
+  list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  width: 100%;
 }
 
-nav ul li {
+nav .container ul li {
+  text-transform: uppercase;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-nav ul li a {
+nav .container ul li a {
   text-decoration: none;
   color: #f0f5f9;
   display: -webkit-box;
@@ -80,7 +100,7 @@ nav ul li a {
   position: relative;
 }
 
-nav ul li a::after {
+nav .container ul li a::after {
   content: "";
   width: 100%;
   position: absolute;
@@ -93,50 +113,158 @@ nav ul li a::after {
           transition-duration: 300ms;
 }
 
-nav ul li a:hover::after {
+nav .container ul li a:hover::after {
   -webkit-transform: scale(1);
           transform: scale(1);
 }
 
-nav ul li a .logo {
+nav .container ul li a .logo {
   width: 45px;
   height: 45px;
   fill: #f0f5f9;
   margin-right: 10px;
 }
 
-nav ul li .active::after {
+nav .container ul li .chosen::after {
   -webkit-transform: scale(1);
           transform: scale(1);
 }
 
-nav ul .brand {
-  margin-right: auto;
+nav .container ul .active-nav {
+  display: block !important;
 }
 
-nav ul .brand a {
+nav .container ul .brand {
+  margin-right: auto;
+  text-transform: none;
+}
+
+nav .container ul .brand a {
   font-size: 30px;
   -webkit-transition: all 300ms;
   transition: all 300ms;
 }
 
-nav ul .brand a::after {
+nav .container ul .brand a::after {
   content: none;
 }
 
-nav ul .brand .logo {
+nav .container ul .brand .logo {
   -webkit-transition: all 300ms;
   transition: all 300ms;
 }
 
-nav ul .brand:hover a {
+nav .container ul .brand:hover a {
   color: #c9d6df;
 }
 
-nav ul .brand:hover .logo {
+nav .container ul .brand:hover .logo {
   fill: #c9d6df;
   -webkit-transform: translateY(-8px);
           transform: translateY(-8px);
+}
+
+nav .container .ham-icon {
+  width: 50px;
+  height: 40px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  border: 1px solid #f0f5f9;
+}
+
+nav .container .ham-icon div {
+  width: 50%;
+  background-color: #f0f5f9;
+  height: 3px;
+  position: relative;
+}
+
+nav .container .ham-icon div::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 8px;
+  height: 3px;
+  left: 0;
+  background-color: #f0f5f9;
+}
+
+nav .container .ham-icon div::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 8px;
+  height: 3px;
+  left: 0;
+  background-color: #f0f5f9;
+}
+
+@media screen and (max-width: 1200px) {
+  nav .container {
+    width: 80%;
+  }
+  nav .container ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+  }
+  nav .container ul li:not(.brand) {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    display: none;
+  }
+  nav .container .ham-icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav .container {
+    width: 100%;
+  }
+  nav .container ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+  }
+  nav .container ul li {
+    display: none;
+    width: 100%;
+  }
+  nav .container ul li.brand {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: auto;
+  }
+  nav .container .ham-icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 header {
@@ -196,7 +324,7 @@ header a {
   -webkit-transform: translateX(50%);
           transform: translateX(50%);
   padding: 12px 35px;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(31, 33, 35, 0.3);
   border: 3px solid #f0f5f9;
   color: white;
   font-size: 1.5rem;
@@ -209,7 +337,7 @@ header a {
 }
 
 header a:hover {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(31, 33, 35, 0.6);
   color: #f0f5f9;
   -webkit-transform: translateX(50%) scale(1.02);
           transform: translateX(50%) scale(1.02);
@@ -665,7 +793,7 @@ section.sauna .coach-text .shape2 {
   left: 0;
   right: 0;
   position: absolute;
-  background-image: url("../Imgs/8.jpg");
+  background: url("../Imgs/8.jpg");
   background-repeat: no-repeat;
   background-position: 100% 100%;
   background-size: cover;
@@ -752,10 +880,9 @@ section.sauna .coach-text .shape2 {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(31, 33, 35, 0.3);
   border: 2px solid #f0f5f9;
   color: white;
-  font-weight: 900;
   -webkit-transition: all 300ms;
   transition: all 300ms;
   text-align: center;
@@ -763,12 +890,12 @@ section.sauna .coach-text .shape2 {
 }
 
 .contact .flexy .container form button:hover {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(31, 33, 35, 0.6);
   color: #f0f5f9;
   -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
           box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
-  -webkit-transform: scale(1.01) translateY(-3px);
-          transform: scale(1.01) translateY(-3px);
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
 }
 
 footer {
