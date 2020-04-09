@@ -834,10 +834,6 @@ section.sauna .coach-text .shape2 {
   background: #e1ebf3;
   -webkit-box-shadow: 0px 8px 8px rgba(30, 32, 34, 0.3);
           box-shadow: 0px 8px 8px rgba(30, 32, 34, 0.3);
-  -webkit-transition: opacity 200ms ease-in, -webkit-transform 300ms ease-in, -webkit-box-shadow 200ms ease-in;
-  transition: opacity 200ms ease-in, -webkit-transform 300ms ease-in, -webkit-box-shadow 200ms ease-in;
-  transition: opacity 200ms ease-in, transform 300ms ease-in, box-shadow 200ms ease-in;
-  transition: opacity 200ms ease-in, transform 300ms ease-in, box-shadow 200ms ease-in, -webkit-transform 300ms ease-in, -webkit-box-shadow 200ms ease-in;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -849,6 +845,10 @@ section.sauna .coach-text .shape2 {
       -ms-flex-pack: justify;
           justify-content: space-between;
   cursor: pointer;
+  -webkit-transition: opacity 500ms ease-in, -webkit-transform 600ms ease-in;
+  transition: opacity 500ms ease-in, -webkit-transform 600ms ease-in;
+  transition: opacity 500ms ease-in, transform 600ms ease-in;
+  transition: opacity 500ms ease-in, transform 600ms ease-in, -webkit-transform 600ms ease-in;
 }
 
 .subscriptions .cards .system a {
@@ -953,6 +953,13 @@ section.sauna .coach-text .shape2 {
 .subscriptions .cards .delay:nth-of-type(3) {
   -webkit-transition-delay: 200ms;
           transition-delay: 200ms;
+}
+
+.subscriptions .cards .hover {
+  -webkit-transition: opacity 200ms ease-in, -webkit-transform 250ms, -webkit-box-shadow 250ms;
+  transition: opacity 200ms ease-in, -webkit-transform 250ms, -webkit-box-shadow 250ms;
+  transition: opacity 200ms ease-in, transform 250ms, box-shadow 250ms;
+  transition: opacity 200ms ease-in, transform 250ms, box-shadow 250ms, -webkit-transform 250ms, -webkit-box-shadow 250ms;
 }
 
 @media screen and (max-width: 1200px) {

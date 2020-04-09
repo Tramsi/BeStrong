@@ -69,6 +69,7 @@ const observer = new IntersectionObserver(function (entries, observer) {
     entry.target.classList.add("appear");
     setTimeout(() => {
       entry.target.classList.remove("delay");
+      entry.target.classList.add("hover");
     }, 500);
     observer.unobserve(entry.target);
   });

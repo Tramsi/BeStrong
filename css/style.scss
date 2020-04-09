@@ -481,12 +481,11 @@ section.sauna {
       width: 290px;
       background: darken($color: $light, $amount: 4%);
       box-shadow: 0px 8px 8px rgba($color: $dark, $alpha: 0.3);
-      transition: opacity 200ms ease-in, transform 300ms ease-in,
-        box-shadow 200ms ease-in;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       cursor: pointer;
+      transition: opacity 500ms ease-in, transform 600ms ease-in;
 
       a {
         text-decoration: none;
@@ -558,6 +557,9 @@ section.sauna {
     }
     .delay:nth-of-type(3) {
       transition-delay: 200ms;
+    }
+    .hover {
+      transition: opacity 200ms ease-in, transform 250ms, box-shadow 250ms;
     }
   }
   @include mq-max(1200px) {
