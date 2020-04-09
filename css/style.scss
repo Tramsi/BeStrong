@@ -10,6 +10,7 @@ html {
   box-sizing: border-box;
   scroll-behavior: smooth;
   line-height: 1.5;
+  overflow-x: hidden;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
@@ -40,6 +41,22 @@ body {
   }
   nav.nav-bg {
     background-color: rgba(30, 32, 34, 0.98);
+  }
+  .fade {
+    transform: translateY(-30%);
+    opacity: 0;
+  }
+  .slide-left {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  .slide-right {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  .appear {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
@@ -309,6 +326,7 @@ section.about {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  transition: opacity 500ms ease-in, transform 600ms ease-in;
   @include mq-max(768px) {
     padding: 50px 10%;
   }
@@ -349,13 +367,15 @@ section.about {
     min-height: 350px;
     object-fit: cover;
     object-position: right;
-    transition: all 1s ease-out;
+    transition: opacity 500ms ease-in, transform 600ms ease-in;
   }
 
   .coach-text {
     width: 50%;
     text-align: justify;
     text-justify: auto;
+    transition: transform 600ms ease-in, opacity 500ms ease-in;
+
     @include clearfix;
 
     @include mq-max(768px) {
@@ -376,7 +396,7 @@ section.about {
     }
 
     h2 {
-      margin-bottom: 20px;
+      margin: 20px auto;
 
       span {
         text-transform: uppercase;
@@ -461,7 +481,8 @@ section.sauna {
       width: 290px;
       background: darken($color: $light, $amount: 4%);
       box-shadow: 0px 8px 8px rgba($color: $dark, $alpha: 0.3);
-      transition: all 0.3s ease-out;
+      transition: opacity 200ms ease-in, transform 300ms ease-in,
+        box-shadow 200ms ease-in;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -473,6 +494,11 @@ section.sauna {
         background-color: lighten($color: $dark, $amount: 3%);
         padding: 20px;
         font-size: 1.3rem;
+        transition: all 1s;
+
+        &:hover {
+          font-size: 1.5rem;
+        }
       }
       .price {
         display: flex;
@@ -525,6 +551,13 @@ section.sauna {
           }
         }
       }
+    }
+
+    .delay:nth-of-type(2) {
+      transition-delay: 100ms;
+    }
+    .delay:nth-of-type(3) {
+      transition-delay: 200ms;
     }
   }
   @include mq-max(1200px) {

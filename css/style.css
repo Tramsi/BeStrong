@@ -13,6 +13,7 @@ html {
           box-sizing: border-box;
   scroll-behavior: smooth;
   line-height: 1.5;
+  overflow-x: hidden;
 }
 
 body {
@@ -30,6 +31,30 @@ body nav.hide {
 
 body nav.nav-bg {
   background-color: rgba(30, 32, 34, 0.98);
+}
+
+body .fade {
+  -webkit-transform: translateY(-30%);
+          transform: translateY(-30%);
+  opacity: 0;
+}
+
+body .slide-left {
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  opacity: 0;
+}
+
+body .slide-right {
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  opacity: 0;
+}
+
+body .appear {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
 }
 
 h1 {
@@ -387,6 +412,10 @@ section.about {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-transition: opacity 500ms ease-in, -webkit-transform 600ms ease-in;
+  transition: opacity 500ms ease-in, -webkit-transform 600ms ease-in;
+  transition: opacity 500ms ease-in, transform 600ms ease-in;
+  transition: opacity 500ms ease-in, transform 600ms ease-in, -webkit-transform 600ms ease-in;
 }
 
 @media screen and (max-width: 768px) {
@@ -430,14 +459,20 @@ section.coaching img {
      object-fit: cover;
   -o-object-position: right;
      object-position: right;
-  -webkit-transition: all 1s ease-out;
-  transition: all 1s ease-out;
+  -webkit-transition: opacity 500ms ease-in, -webkit-transform 600ms ease-in;
+  transition: opacity 500ms ease-in, -webkit-transform 600ms ease-in;
+  transition: opacity 500ms ease-in, transform 600ms ease-in;
+  transition: opacity 500ms ease-in, transform 600ms ease-in, -webkit-transform 600ms ease-in;
 }
 
 section.coaching .coach-text {
   width: 50%;
   text-align: justify;
   text-justify: auto;
+  -webkit-transition: opacity 500ms ease-in, -webkit-transform 600ms ease-in;
+  transition: opacity 500ms ease-in, -webkit-transform 600ms ease-in;
+  transition: transform 600ms ease-in, opacity 500ms ease-in;
+  transition: transform 600ms ease-in, opacity 500ms ease-in, -webkit-transform 600ms ease-in;
 }
 
 section.coaching .coach-text::after {
@@ -469,7 +504,7 @@ section.coaching .coach-text .shape2 {
 }
 
 section.coaching .coach-text h2 {
-  margin-bottom: 20px;
+  margin: 20px auto;
 }
 
 section.coaching .coach-text h2 span {
@@ -509,14 +544,20 @@ section.equipment img {
      object-fit: cover;
   -o-object-position: right;
      object-position: right;
-  -webkit-transition: all 1s ease-out;
-  transition: all 1s ease-out;
+  -webkit-transition: opacity 500ms ease-in, -webkit-transform 600ms ease-in;
+  transition: opacity 500ms ease-in, -webkit-transform 600ms ease-in;
+  transition: opacity 500ms ease-in, transform 600ms ease-in;
+  transition: opacity 500ms ease-in, transform 600ms ease-in, -webkit-transform 600ms ease-in;
 }
 
 section.equipment .coach-text {
   width: 50%;
   text-align: justify;
   text-justify: auto;
+  -webkit-transition: opacity 500ms ease-in, -webkit-transform 600ms ease-in;
+  transition: opacity 500ms ease-in, -webkit-transform 600ms ease-in;
+  transition: transform 600ms ease-in, opacity 500ms ease-in;
+  transition: transform 600ms ease-in, opacity 500ms ease-in, -webkit-transform 600ms ease-in;
 }
 
 section.equipment .coach-text::after {
@@ -548,7 +589,7 @@ section.equipment .coach-text .shape2 {
 }
 
 section.equipment .coach-text h2 {
-  margin-bottom: 20px;
+  margin: 20px auto;
 }
 
 section.equipment .coach-text h2 span {
@@ -588,14 +629,20 @@ section.place img {
      object-fit: cover;
   -o-object-position: right;
      object-position: right;
-  -webkit-transition: all 1s ease-out;
-  transition: all 1s ease-out;
+  -webkit-transition: opacity 500ms ease-in, -webkit-transform 600ms ease-in;
+  transition: opacity 500ms ease-in, -webkit-transform 600ms ease-in;
+  transition: opacity 500ms ease-in, transform 600ms ease-in;
+  transition: opacity 500ms ease-in, transform 600ms ease-in, -webkit-transform 600ms ease-in;
 }
 
 section.place .coach-text {
   width: 50%;
   text-align: justify;
   text-justify: auto;
+  -webkit-transition: opacity 500ms ease-in, -webkit-transform 600ms ease-in;
+  transition: opacity 500ms ease-in, -webkit-transform 600ms ease-in;
+  transition: transform 600ms ease-in, opacity 500ms ease-in;
+  transition: transform 600ms ease-in, opacity 500ms ease-in, -webkit-transform 600ms ease-in;
 }
 
 section.place .coach-text::after {
@@ -627,7 +674,7 @@ section.place .coach-text .shape2 {
 }
 
 section.place .coach-text h2 {
-  margin-bottom: 20px;
+  margin: 20px auto;
 }
 
 section.place .coach-text h2 span {
@@ -667,14 +714,20 @@ section.sauna img {
      object-fit: cover;
   -o-object-position: right;
      object-position: right;
-  -webkit-transition: all 1s ease-out;
-  transition: all 1s ease-out;
+  -webkit-transition: opacity 500ms ease-in, -webkit-transform 600ms ease-in;
+  transition: opacity 500ms ease-in, -webkit-transform 600ms ease-in;
+  transition: opacity 500ms ease-in, transform 600ms ease-in;
+  transition: opacity 500ms ease-in, transform 600ms ease-in, -webkit-transform 600ms ease-in;
 }
 
 section.sauna .coach-text {
   width: 50%;
   text-align: justify;
   text-justify: auto;
+  -webkit-transition: opacity 500ms ease-in, -webkit-transform 600ms ease-in;
+  transition: opacity 500ms ease-in, -webkit-transform 600ms ease-in;
+  transition: transform 600ms ease-in, opacity 500ms ease-in;
+  transition: transform 600ms ease-in, opacity 500ms ease-in, -webkit-transform 600ms ease-in;
 }
 
 section.sauna .coach-text::after {
@@ -706,7 +759,7 @@ section.sauna .coach-text .shape2 {
 }
 
 section.sauna .coach-text h2 {
-  margin-bottom: 20px;
+  margin: 20px auto;
 }
 
 section.sauna .coach-text h2 span {
@@ -781,8 +834,10 @@ section.sauna .coach-text .shape2 {
   background: #e1ebf3;
   -webkit-box-shadow: 0px 8px 8px rgba(30, 32, 34, 0.3);
           box-shadow: 0px 8px 8px rgba(30, 32, 34, 0.3);
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
+  -webkit-transition: opacity 200ms ease-in, -webkit-transform 300ms ease-in, -webkit-box-shadow 200ms ease-in;
+  transition: opacity 200ms ease-in, -webkit-transform 300ms ease-in, -webkit-box-shadow 200ms ease-in;
+  transition: opacity 200ms ease-in, transform 300ms ease-in, box-shadow 200ms ease-in;
+  transition: opacity 200ms ease-in, transform 300ms ease-in, box-shadow 200ms ease-in, -webkit-transform 300ms ease-in, -webkit-box-shadow 200ms ease-in;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -802,6 +857,12 @@ section.sauna .coach-text .shape2 {
   background-color: #25282a;
   padding: 20px;
   font-size: 1.3rem;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.subscriptions .cards .system a:hover {
+  font-size: 1.5rem;
 }
 
 .subscriptions .cards .system .price {
@@ -882,6 +943,16 @@ section.sauna .coach-text .shape2 {
 .subscriptions .cards .system:hover .price p {
   -webkit-transform: rotateX(360deg);
           transform: rotateX(360deg);
+}
+
+.subscriptions .cards .delay:nth-of-type(2) {
+  -webkit-transition-delay: 100ms;
+          transition-delay: 100ms;
+}
+
+.subscriptions .cards .delay:nth-of-type(3) {
+  -webkit-transition-delay: 200ms;
+          transition-delay: 200ms;
 }
 
 @media screen and (max-width: 1200px) {
