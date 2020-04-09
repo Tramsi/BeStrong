@@ -28,9 +28,8 @@ function hamToggle() {
 function navbarScroll() {
   const navbar = document.querySelector("nav");
   const navLinks = document.querySelectorAll(".item");
-  console.log(navbar);
+  const header = document.querySelector("header");
   let scrollPosBefore = window.pageYOffset;
-  console.log(scrollPosBefore);
   window.addEventListener("scroll", function () {
     scrollPosNow = window.pageYOffset;
     if (scrollPosNow > scrollPosBefore && scrollPosNow > 350) {
@@ -46,19 +45,21 @@ function navbarScroll() {
     } else {
       navbar.classList.remove("nav-bg");
     }
+    //parallax effect for the header image
+    header.style.backgroundPositionY = `${45 + scrollPosNow / 18}%`;
+
     scrollPosBefore = scrollPosNow;
   });
 }
 
-//change the nav links style depending on whether it's active or not
-function chosenLink() {}
-
 const slides = document.querySelectorAll(".slide");
 const fadeIn = document.querySelectorAll(".fade");
+const sections = document.querySelectorAll(".section");
+const navAnchors = document.querySelectorAll(".item a");
 const options = {
   root: null,
   threshold: 0.3,
-  // roottMargin: "-150px 0px 0px 150px"
+  // roottMargin: "20px 100px 100px 300px",
 };
 
 const observer = new IntersectionObserver(function (entries, observer) {
@@ -71,7 +72,14 @@ const observer = new IntersectionObserver(function (entries, observer) {
       entry.target.classList.remove("delay");
       entry.target.classList.add("hover");
     }, 500);
-    observer.unobserve(entry.target);
+    navAnchors.forEach((anchor) => {
+      console.log(entry.target.id);
+      if (!(entry.target.id + "Id" === anchor.id)) {
+        anchor.classList.remove("chosen");
+      } else {
+        anchor.classList.add("chosen");
+      }
+    });
   });
 }, options);
 
@@ -81,6 +89,10 @@ slides.forEach((slide) => {
 
 fadeIn.forEach((fade) => {
   observer.observe(fade);
+});
+
+sections.forEach((section) => {
+  observer.observe(section);
 });
 
 hamToggle();
