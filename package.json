@@ -1,0 +1,9 @@
+{
+  "name": "be-strong",
+  "version": "1.0.0",
+  "description": "An static page for a gymanisium",
+  "main": "index.js",
+  "repository": "https://github.com/Tramsi/BeStrong.git",
+  "author": "Tramsi <tramsi2014@gmail.com>",
+  "license": "MIT"
+}
